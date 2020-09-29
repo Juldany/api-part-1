@@ -1,0 +1,33 @@
+doctype html
+html
+  include partials/head.pug
+  body
+      div(class="content")
+      div(class="title") Welcome to Dog Village
+      div(class="doc-panels")
+        div(class="sidebar")
+          div(id="get-dogs-end-point", class="endpoint newroute")
+            a(onclick="activateEndpoint('get-dogs')")
+              span(class="get") GET
+              |  /dogs
+          div(id="get-dog-id-end-point", class="endpoint")
+            a(onclick="activateEndpoint('get-dogs-id')")
+              span(class="get") GET
+              |  /dogs/{id}
+          div(id="post-dogs-end-point", class="endpoint")
+            a(onclick="activateEndpoint('post-dogs')")
+              span(class="post") POST
+              |  /dogs
+          div(id="delete-dogs-end-point", class="endpoint")
+            a(onclick="activateEndpoint('delete-dogs')")
+              span(class="delete") DELETE
+              |  /dogs/{id}
+        div(id="get-dogs-doc", class="doc hidden")
+          include partials/docs/getDogs.pug
+        div(id="get-dogs-id-doc", class="doc hidden")
+          include partials/docs/getDogById.pug
+        div(id="post-dogs-doc", class="doc hidden")
+          include partials/docs/postdog.pug
+        div(id="delete-dogs-doc", class="doc hidden")
+          include partials/docs/deleteD.pug
+
